@@ -1,0 +1,24 @@
+type Game {
+    id: ID!
+    name: String!
+    companyName: String
+    kind: String
+}
+
+type Company {
+    companyId: ID!
+    name: String!
+    games: [Game!]!
+}
+
+type Query {
+    game(id: ID!): Game
+    games: [Game!]!
+    company(companyId: ID!): Company
+    companies: [Company!]!
+}
+
+type Mutation {
+    createCompany(companyId: ID!, name: String!): Company
+    createGame(id: ID!, name: String!, companyName: String!, kind: String!): Game
+}
