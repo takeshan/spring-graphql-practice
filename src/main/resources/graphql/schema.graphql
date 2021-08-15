@@ -19,6 +19,6 @@ type Query {
 }
 
 type Mutation {
-    createCompany(name: String!): Company
-    createGame(name: String!, companyName: String!, kind: String!): Game
+    createCompany(companyId: ID!, name: String!): Company
+    createGame(id: ID!, name: String!, companyName: String!, kind: String!): Game
 }
